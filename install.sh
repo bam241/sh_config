@@ -12,8 +12,8 @@ rm_or_mv() {
 # Getting Omzsh & fonts for iterm
 git submodule update --init --recursive
 
-rm_or_mv ${HOME}/.zshrc
-ln -s ${HOME}/.zsh_config/zsh/zshrc ${HOME}/.zshrc
+rm_or_mv ${HOME}/.xonshrc
+ln -s ${HOME}/.zsh_config/zsh/xonshrc ${HOME}/.xonshrc
 
 rm_or_mv ${HOME}/.tmux.conf
 ln -s ${HOME}/.zsh_config/tmux/tmux.conf ${HOME}/.tmux.conf
