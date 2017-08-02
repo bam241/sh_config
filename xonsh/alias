@@ -1,0 +1,70 @@
+#!/bin/zsh
+
+
+alias source_zshrc="source $HOME/.zshrc"
+alias source_alias="source $HOME/.zsh_config/zsh/alias"
+alias source_config="source $HOME/.zsh_config/zsh/env_perso"
+
+alias cdz="cd ~/.zsh_config"
+alias cda="cd ${APP_PATH}"
+
+######################
+##Alias Perso/Boulot##
+######################
+alias clean='rm *~; rm ~\$*; rm .*.swp; rm \#*\#'
+alias texclean='rm *$HOME \$HOME\$* *.log *.aux *.out *.synctex.gz'
+
+alias vi='vim'
+
+export MANPAGER="sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu' \
+    -c 'nnoremap i <nop>' \
+    -c 'nnoremap <Space> <C-f>' \
+    -c 'noremap q :quit<CR>' -\""
+
+##########################
+##########################
+alias todo='git -C ~/work/todo fetch origin; git -C ~/work/todo rebase origin master; vi  ~/work/todo/todo.md; git -C  ~/work/todo commit -am"update";git -C  ~/work/todo push -q'
+
+
+##########################
+######### Docker #########
+##########################
+# Kill all running containers.
+alias dockerkillall='docker kill $(docker ps -q)'
+
+# Delete all stopped containers.
+alias dockercleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+
+# Delete all untagged images.
+alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+
+# Delete all stopped containers and untagged images.
+alias dockerclean='dockercleanc || true && dockercleani'
+
+
+
+
+
+
+alias tunnel='open http://www.deezer.com/playlist/88970191 -a Firefox && ssh -D6060 vps204419.ovh.net'
+
+##################
+##Alias generaux##
+##################
+
+alias axel="axel -a -n 10"
+
+
+#alias cd='gitcd'
+alias cp='cp -v'
+alias ll='ls -al'
+alias xterm='xterm&'
+alias ld='ls -ldG'
+alias xmgr='xmgrace&'
+alias gimp='gimp&'
+alias opof="openoffice"
+alias umount='sudo umount'
+alias mount='sudo mount'
+alias srm='mv -v \!* $HOME/.Trash/'
+alias mv='mv -v'
+#alias ssh='ssh -Y'

@@ -1,0 +1,42 @@
+#!/bin/zsh
+
+#############################
+# variables d'environnement #
+#############################
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+
+export PATH="${PATH}:/usr/local/bin"
+export PATH="${PATH}:/usr/bin:/bin"
+export PATH="${PATH}:/usr/sbin:/sbin"
+export PATH="${PATH}:${HOME}/.zsh_config/macros/"
+export PATH="${HOME}/.local/bin:$PATH"
+
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+
+
+export TMUX_SHELL="`ps -p $$ | tail -1 | awk '{ print $4 }'`"
+export XDG_CONFIG_HOME="${HOME}/.config"
+
+if [[ ! $TMUX ]]; then
+    export TERM='xterm-256color'
+else
+    export TERM='screen-256color'
+fi
+####---------------------------------------------------####
+
+export hostname=`hostname -s`
+
+
+
+
+
+
+
+
+
+
+
+
